@@ -14,4 +14,4 @@ factorial = 1
 while i <=number:
     factorial *= i
     i += 1
-    print(f'Factorial(N)= {factorial}')
+    print(f'Factorial(N)= {factorial}') 
