@@ -8,7 +8,7 @@
 
 import random
 long = int(input('введите количество значений: '))
-list = [random.randint(1,10) for _ in range(long)]
+list = [random.randint(1,100) for _ in range(long)]
 print(f'Original list: {list}')
 n = int(input("введем искомое число "))
 
