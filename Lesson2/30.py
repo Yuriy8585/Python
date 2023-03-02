@@ -26,11 +26,17 @@ for value in list_1:
     list_2.append(elem)
 print(list_2)
 
-list_3 = []
+list_3= []
 for value in list_2:
-    n = sum (int(elem) for elem in value)
- 
-    first_num = n % 10
-    second_num = n % 100 // 10
-    third_num = n // 100
-print("Сумма цифр числа:", first_num, second_num, third_num)
+    while int(value) > 9:
+        value = sum(int(elem) for elem in str(value))
+        first_num = value % 10
+        second_num = value % 100 // 10
+        third_num = value // 100
+        print(value)
+    list_3.append(value)
+print(list_3)
+
+
+list_4 = set(list_3)
+print(list_4)
