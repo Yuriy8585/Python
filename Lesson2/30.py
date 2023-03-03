@@ -30,10 +30,10 @@ list_3= []
 for value in list_2:
     while int(value) > 9:
         value = sum(int(elem) for elem in str(value))
-        first_num = value % 10
-        second_num = value % 100 // 10
-        third_num = value // 100
-        print(value)
+        #first_num = value % 10
+        #second_num = value % 100 // 10
+        #third_num = value // 100
+        # print(value, end=' ')
     list_3.append(value)
 print(list_3)
 

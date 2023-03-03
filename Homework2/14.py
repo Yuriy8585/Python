@@ -9,3 +9,10 @@ while 2 ** i <= n:
     i += 1
 print(2 ** i)
 
+"""
+n = int(input())
+i = 1
+while i < n:
+    print(i, end=' ')
+    i *= 2
+"""
