@@ -8,3 +8,18 @@
 Напишите программу для нахождения максимального числа ягод, которое может собрать за один заход собирающий модуль, 
 находясь перед некоторым кустом заданной во входном файле грядки.
 """
+import random
+amount_bush = int(input('Input amount of bush: '))
+max_sum = 0
+garden_list = [random.randint(1,10) for _ in range(amount_bush)]
+print(f'Garden/bush: {garden_list}')
+for number_bush in range(amount_bush): 
+    if number_bush == 1:
+        max_berries = garden_list[-1] + sum(garden_list[:2]) 
+    elif number_bush == amount_bush:
+        max_berries = sum(garden_list[amount_bush-2:]) + garden_list[0]
+    else:
+        max_berries = sum(garden_list[number_bush-2:number_bush+1])
+    if max_berries > max_sum:
+        max_sum = max_berries
+print(f'Max of berries: {max_sum}')
