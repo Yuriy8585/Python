@@ -1,11 +1,11 @@
 
-path_to_r = 'data/file.txt'
-path_to_w = 'data/file_copy.txt'
-path_to_a = 'data/file_append.txt'
+path_to_r = 'File/file.txt'
+path_to_w = 'File/file_copy.txt'
+path_to_a = 'File/file_append.txt'
 
 with open(path_to_r, 'r', encoding = 'UTF-8') as file:
     data = file.readlines()
-    print(data)
+print(data)
 """    
 with open(path, 'r', encoding = 'utf-8') as file:
     data = file.read()
