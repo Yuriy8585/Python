@@ -2,7 +2,7 @@ Secondname:
 
 Name:
 
-Number telephone:
+Telephone Number:
 
 Dicription:
 
