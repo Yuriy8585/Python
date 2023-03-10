@@ -108,6 +108,8 @@ def is_odd(lst: list) -> list:
     new_list = list(filter(lambda x: int(x) % 2 != 0, lst))
     return new_list
 
+# Перевод строки в инт
+#print(int('ABC', 16))
 
 
 # нумерация списка
