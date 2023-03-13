@@ -16,3 +16,14 @@ def process_arguments(*args):
         print("Argument value:", arg)
 process_arguments("hello", 42, [1, 2, 3], {"name": "Alice", "age": 30})
 
+def printPetNames(owner, **pets):
+   print(f"Owner Name: {owner}")
+   for pet,name in pets.items():
+      print(f"{pet}: {name}")
+printPetNames("Jonathan", dog="Brock", fish=["Larry", "Curly", "Moe"], turtle="Shelldon")
+"""
+Owner Name: Jonathan
+dog: Brock
+fish: ['Larry', 'Curly', 'Moe']
+turtle: Shelldon
+"""
