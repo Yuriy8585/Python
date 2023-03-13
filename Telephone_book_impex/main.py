@@ -1,7 +1,7 @@
 from head import choice
 import os
 
-os.system('cls')
+os.system('txt')
 
 
 def main():
