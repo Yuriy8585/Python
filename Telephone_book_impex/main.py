@@ -5,7 +5,7 @@ clear = lambda: os.system('cls')
 clear()
 
 def main():
-    choice()
+    choice() # Структура создания файла
 
 
 if __name__ == '__main__':

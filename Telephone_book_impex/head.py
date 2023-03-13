@@ -9,7 +9,7 @@ from Record import from_file
 def view():
     print(from_file('Telephone_book_impex/Telephonebook.txt'))
 
-def record_info():
+def record_info(): # Берем ф-ции из информации
     info = information()
     writing_csv(info)
     writing_txt(info)
