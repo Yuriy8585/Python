@@ -32,6 +32,7 @@ def choice():
         flag = input(
             'Press any key to exit: ')
     print('Saved!')
+# Проверка существующего списка
 path_to_r = 'Telephone_book_impex/Telephonebook.txt'
 with open(path_to_r, 'r', encoding = 'UTF-8') as file:
     data = file.readlines()

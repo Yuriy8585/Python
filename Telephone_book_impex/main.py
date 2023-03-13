@@ -1,8 +1,8 @@
 from head import choice
 
 import os
-
-os.system('cls')
+clear = lambda: os.system('cls')
+clear()
 
 def main():
     choice()
