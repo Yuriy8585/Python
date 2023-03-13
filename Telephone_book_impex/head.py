@@ -7,8 +7,7 @@ from Record import from_file
 
 
 def view():
-    print(from_file('Telephonebook.txt'))
-
+    print(from_file('Telephone_book_impex/Telephonebook.txt'))
 
 def record_info():
     info = information()
@@ -18,18 +17,22 @@ def record_info():
 
 def choice():
     flag = input(
-        'Press \'Y\' to continue or any other symbol to exit: ').lower()
-    while (flag.lower() == 'Y'):
-        path = 'Telephonebook.csv'
+        'Press \'Y\' to open file or any other symbol to exit: ')
+    while (flag.lower() == 'y'):
+        path = 'Telephone_book_impex/Telephonebook.csv'
         valid = exists(path)
         if not valid:
             creating()
         choice_action = input(
-            'Press \'Y\' to continue or any other symbol to exit:  ').lower()
-        if choice_action.lower() == 'Y':
+            'Press \'Y\' to create new write or any other symbol to exit:  ')
+        if choice_action.lower() == 'y':
             record_info()
         else:
             view()
         flag = input(
-            'Press \'Y\' to continue or any other symbol to exit: ').lower()
+            'Press any key to exit: ')
     print('Saved!')
+path_to_r = 'Telephone_book_impex/Telephonebook.txt'
+with open(path_to_r, 'r', encoding = 'UTF-8') as file:
+    data = file.readlines()
+print(data)

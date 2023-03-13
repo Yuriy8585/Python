@@ -1,8 +1,8 @@
 from head import choice
+
 import os
 
-os.system('txt')
-
+os.system('cls')
 
 def main():
     choice()
