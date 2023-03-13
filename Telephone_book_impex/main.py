@@ -1,4 +1,4 @@
-from interface import choice
+from head import choice
 import os
 
 os.system('cls')
