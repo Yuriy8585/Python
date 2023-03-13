@@ -18,18 +18,18 @@ def record_info():
 
 def choice():
     flag = input(
-        'Press \'Y\' to continue or any other symbol to exit: ')
+        'Press \'Y\' to continue or any other symbol to exit: ').lower()
     while (flag.lower() == 'Y'):
         path = 'Telephonebook.csv'
         valid = exists(path)
         if not valid:
             creating()
         choice_action = input(
-            'Press \'Y\' to continue or any other symbol to exit:  ')
+            'Press \'Y\' to continue or any other symbol to exit:  ').lower()
         if choice_action.lower() == 'Y':
             record_info()
         else:
             view()
         flag = input(
-            'Press \'Y\' to continue or any other symbol to exit: ')
+            'Press \'Y\' to continue or any other symbol to exit: ').lower()
     print('Saved!')

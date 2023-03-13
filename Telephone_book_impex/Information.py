@@ -21,7 +21,7 @@ def information():
         except:
             print('Please put numbers.')
     info.append(phone_number)
-    description = input('Discription: ')
+    description = input('Discription: ').lower()
     info.append(description)
     return info
 
