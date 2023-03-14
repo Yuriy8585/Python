@@ -14,8 +14,8 @@ def information():
     while not valid:
         try:
             phone_number = input('Telefone number : ')
-            if len(phone_number) != 11:
-                print('Must be 11 digits.')
+            if len(phone_number) < 11:
+                print('Must be 11 or more digits.')
             else:
                 phone_number = int(phone_number)
                 valid = True
@@ -42,22 +42,26 @@ def writing_txt(info):
 def findcl(info):
     file = 'Telephone_book_impex/Telephonebook.csv'
     with open(file, 'r', encoding = 'UTF-8') as data:
-        name_cntc = input('Введите Имя Фамилию')
+        name_cntc = input('Input Last Name ')
         data = data.readlines()
         if name_cntc in info:
             print(f'Last_name: {info[0]}\n\nName: {info[1]}\n\nTelephone_number: {info[2]}\n\nDiscription: {info[3]}\n\n\n')
         else:
-            print(f'Не найдено')
+            print(f'Not Found {name_cntc}')
 
-def add_client(info, new_cntc_in = [0]):
-    if len(new_cntc_in) < 2:
-        name_cntc = input('Введите Имя Фамилию')
-        phone_cntc = input('Введите телефон')
-        comment_cntc = input('Введите комментарий')
+def add_client(info, new_last_name = [0]):
+    if len(new_last_name) != 0:
+        last_name = input('Last Name : ')
+        info.append(last_name)
+        first_name = input('Your name : ')
+        info.append(first_name)
+        
+        phone_cntc = int(input('Enter phone number : '))
+        comment_cntc = input('Discription : ')
         cntc_list = [phone_cntc, comment_cntc]
     else:
-        name_cntc, cntc_list = tuple(new_cntc_in)
+        last_name, first_name, cntc_list = tuple(new_last_name)
     # info[name_cntc] = info.setdefault(name_cntc, cntc_list)
-    info.setdefault(name_cntc, cntc_list)
-    print(f'{name_cntc}, {info[name_cntc]}')
+    info.setdefault(last_name, first_name, cntc_list)
+    print(f'{last_name, first_name}, {info[last_name, first_name]}')
     return info        
