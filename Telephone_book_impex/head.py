@@ -2,7 +2,7 @@
 
 from os.path import exists
 from createwrite import creating
-from Information import writing_csv, writing_txt, information, findcl
+from Information import writing_csv, writing_txt, information, findcl, add_client
 from Record import from_file
 
 
@@ -16,40 +16,37 @@ def record_info(): # Берем ф-ции из информации
 
 
 def choice():
-    flag = input(
-        'Press \'Y\' to open file or any other symbol to exit: \n1: Сохранить телефонную книгу, \n2: Показать все контакты, \n3: Найти контакт '
-                        '\n4: Добавить контакт, \n5: Изменить контакт,  \n6: Удалить контакт, \n7: Выход \n:_____')
+    flag = input('Press \'Y\' to create new write or any other symbol to exit:  ')
     while (flag.lower() == 'y'):
         path = 'Telephone_book_impex/Telephonebook.csv'
         valid = exists(path)
         if not valid:
             creating()
-        choice_action = input(
-            'Press \'Y\' to create new write or any other symbol to exit:  ')
-        if choice_action.lower() == '4':
+        choice_action = input('Press key to open file or any other symbol to exit: \n1: Сохранить телефонную книгу, \n2: Показать все контакты, \n3: Найти контакт '
+                        '\n4: Добавить контакт, \n5: Изменить контакт,  \n6: Удалить контакт, \n7: Выход \n:_____')
+        if choice_action == '4':
             record_info()
-        if choice_action.lower() == '1':
+        if choice_action == '1':
                 info = information()
                 writing_csv(info)
                 writing_txt(info)
-        if choice_action.lower() == '2':
+        if choice_action == '2':
             view()
-        if choice_action.lower() == '3':
+        if choice_action == '3':
+            findcl(info)
+        if choice_action == '5':
+            new_cntc = findcl(info)
+            add_client(info, new_cntc)
+        if choice_action == '6':
             record_info()
-        if choice_action.lower() == '5':
-            view()
-            record_info()
-        if choice_action.lower() == '6':
-            record_info()
-        if choice_action.lower() == '7':
+        if choice_action == '7':
             break
         else:
-            choice()
-            record_info()
+            print('Wrong choice')
             view()
         flag = input(
                 'Press any key to exit: ')
-        print('Saved!')
+    print('Saved!')
 
 """
 def choice():

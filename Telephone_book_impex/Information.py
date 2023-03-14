@@ -1,7 +1,7 @@
 # Позволяет ввести данные для дальнейшого сохранения в телефонном справочнике. 
 # В данном модюле присутствует проверка на количество символов в номере телефона, и проверка на число. 
 # Все четыре категории данных, а именно фамилия, имя, номер телефона и описание, сохраняются в списке `info`.
-from Record import from_file
+
 
 def information():
     info = []
@@ -43,13 +43,21 @@ def findcl(info):
     file = 'Telephone_book_impex/Telephonebook.csv'
     with open(file, 'r', encoding = 'UTF-8') as data:
         name_cntc = input('Введите Имя Фамилию')
-        if name_cntc in file:
-            data.write(
-            f'Last_name: {info[0]}\n\nName: {info[1]}\n\nTelephone_number: {info[2]}\n\nDiscription: {info[3]}\n\n\n')
+        data = data.readlines()
+        if name_cntc in info:
+            print(f'Last_name: {info[0]}\n\nName: {info[1]}\n\nTelephone_number: {info[2]}\n\nDiscription: {info[3]}\n\n\n')
         else:
             print(f'Не найдено')
-        
-        
-    
-    
-findcl()
+
+def add_client(info, new_cntc_in = [0]):
+    if len(new_cntc_in) < 2:
+        name_cntc = input('Введите Имя Фамилию')
+        phone_cntc = input('Введите телефон')
+        comment_cntc = input('Введите комментарий')
+        cntc_list = [phone_cntc, comment_cntc]
+    else:
+        name_cntc, cntc_list = tuple(new_cntc_in)
+    # info[name_cntc] = info.setdefault(name_cntc, cntc_list)
+    info.setdefault(name_cntc, cntc_list)
+    print(f'{name_cntc}, {info[name_cntc]}')
+    return info        
