@@ -38,14 +38,16 @@ def choice():
         if choice_action == '7':
             break
         else:
-            print('RESULT')
-            view()
+            print('DONE')
+            
         flag = input(
                 'Press any key to exit: ')
     print('Saved!')
 
 def view():
     print(from_file('Telephone_book_impex/Telephonebook.txt'))
+
+
 
 def record_info(): # Берем ф-ции из информации
     info = information()
