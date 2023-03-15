@@ -1,4 +1,4 @@
-from head import choice
+from head import view, choice
 
 import os
 clear = lambda: os.system('cls')

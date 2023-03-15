@@ -40,7 +40,7 @@ def writing_txt(info):
             f'Last_name: {info[0]}\n\nName: {info[1]}\n\nTelephone_number: {info[2]}\n\nDiscription: {info[3]}\n\n\n')
 
 def findcl(info):
-    file = 'Telephone_book_impex/Telephonebook.csv'
+    file = 'Telephone_book_impex/Telephonebook.txt'
     with open(file, 'r', encoding = 'UTF-8') as data:
         name_cntc = input('Input Last Name ')
         data = data.readlines()
@@ -55,13 +55,15 @@ def add_client(info, new_last_name = [0]):
         info.append(last_name)
         first_name = input('Your name : ')
         info.append(first_name)
-        
         phone_cntc = int(input('Enter phone number : '))
+        info.append(phone_cntc)
         comment_cntc = input('Discription : ')
+        info.append(comment_cntc)
         cntc_list = [phone_cntc, comment_cntc]
     else:
         last_name, first_name, cntc_list = tuple(new_last_name)
     # info[name_cntc] = info.setdefault(name_cntc, cntc_list)
     info.setdefault(last_name, first_name, cntc_list)
-    print(f'{last_name, first_name}, {info[last_name, first_name]}')
+    print(f'{new_last_name}, {info[new_last_name]}')
     return info        
+
