@@ -34,3 +34,4 @@ if len(recommended_wine) > 0:
     print(f'Рекомендуемое вино: {random.choice(recommended_wine)}')
 else:
     print('К сожалению, мы не можем подобрать вино под ваше настроение и погоду')
+
