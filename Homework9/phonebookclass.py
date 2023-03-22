@@ -1,6 +1,6 @@
 class Contact:
     def __init__(self, name: str, phone_number: str, email: str):
-        self.path = 'phonebook.txt'
+        self.path = 'phoneBook2.txt'
         self.name = name
         self.phone_number = phone_number
         self.email = email

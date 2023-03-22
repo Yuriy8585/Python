@@ -1,6 +1,7 @@
 import phonebookclass
 
-pb = phonebookclass.PhoneBook('phonebook.txt')
+
+pb = phonebookclass.PhoneBook('phoneBook2.txt')
 
 
 while True:
