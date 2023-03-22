@@ -1,15 +1,6 @@
 import phonebookclass
-
+from phonebookclass import Contact
 pb = phonebookclass.PhoneBook('phonebook.txt')
-
-"""
-print(pb)
-pb.new_contact('Kirill', '+7123456789', 'kirill@mail.ru')
-#print(pb.phone_list[1])
-print(pb)
-pb.save()
-print(pb.search('0'))
-"""
 
 while True:
     print(pb.menu())
@@ -22,6 +13,8 @@ while True:
             phone_number = input('Введите номер телефона: ')
             email = input('Введите email: ')
             pb.new_contact(name, phone_number, email)
+            writing_txt(pb)
+            writing_csv(pb)
         case 3:
             name = input('Введите имя: ')
             pb.search_by_name(name)

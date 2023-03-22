@@ -8,7 +8,15 @@ class Contact:
     
     def to_str(self):
         return f"{self.name:<20} has phone number {self.phone_number:<20} and email {self.email:<20}"
-        
+    
+    def writing_csv(self):
+        with open(self.path, 'a', encoding='utf-8') as data:
+            data.write(f"{self.name:<20} has phone number {self.phone_number:<20} and email {self.email:<20}")
+
+
+    def writing_txt(self):
+        with open(self.path, 'a', encoding='utf-8') as data:
+            data.write(f"{self.name:<20} has phone number {self.phone_number:<20} and email {self.email:<20}")    
 
 class PhoneBook:
     def __init__(self, path: str):
@@ -66,3 +74,4 @@ class PhoneBook:
             i+=1
             result += f'{i}{contact}\n'
         return result[:-2]
+    
