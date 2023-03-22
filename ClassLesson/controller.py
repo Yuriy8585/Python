@@ -1,5 +1,5 @@
 import phonebookclass
-from phonebookclass import Contact
+
 pb = phonebookclass.PhoneBook('phonebook.txt')
 
 while True:
@@ -13,8 +13,7 @@ while True:
             phone_number = input('Введите номер телефона: ')
             email = input('Введите email: ')
             pb.new_contact(name, phone_number, email)
-            writing_txt(pb)
-            writing_csv(pb)
+
         case 3:
             name = input('Введите имя: ')
             pb.search_by_name(name)
@@ -31,5 +30,8 @@ while True:
             pb.delete(index-1)
         case 6:
             pb.save()
+            writing_txt(pb)
+            writing_csv(pb)
         case 7:
             break
+

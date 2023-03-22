@@ -41,17 +41,18 @@ def writing_txt(info):
             f'Last_name: {info[0]}\nName: {info[1]}\nTelephone_number: {info[2]}\nDiscription: {info[3]}\n\n')
 
 
-def add_client(info, new_last_name = [0]):
-    if len(new_last_name) != 0:
+def add_client(info, new_last_name):
+    if len(new_last_name):
         last_name = input('Last Name : ')
-        info.append(last_name)
+        info(last_name)
         first_name = input('Your name : ')
-        info.append(first_name)
+        info(first_name)
         phone_cntc = int(input('Enter phone number : '))
-        info.append(phone_cntc)
+        info(phone_cntc)
         comment_cntc = input('Discription : ')
-        info.append(comment_cntc)
+        info(comment_cntc)
         cntc_list = [phone_cntc, comment_cntc]
-    
+    writing_csv (info)
+    writing_txt(info)
     return {'Last_name': info[0], 'Name': info[1], 'Telephone_number': info[2], 'Discription': info[3], 'Client_list': cntc_list}       
 

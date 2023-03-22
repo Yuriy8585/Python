@@ -1,5 +1,6 @@
 class Contact:
     def __init__(self, name: str, phone_number: str, email: str):
+        self.path = 'phonebook.txt'
         self.name = name
         self.phone_number = phone_number
         self.email = email
@@ -9,20 +10,12 @@ class Contact:
     def to_str(self):
         return f"{self.name:<20} has phone number {self.phone_number:<20} and email {self.email:<20}"
     
-    def writing_csv(self):
-        with open(self.path, 'a', encoding='utf-8') as data:
-            data.write(f"{self.name:<20} has phone number {self.phone_number:<20} and email {self.email:<20}")
-
-
-    def writing_txt(self):
-        with open(self.path, 'a', encoding='utf-8') as data:
-            data.write(f"{self.name:<20} has phone number {self.phone_number:<20} and email {self.email:<20}")    
 
 class PhoneBook:
     def __init__(self, path: str):
         self.path = path
         self.phone_list = []
-        self.load()
+        self.open()
     def open(self):
         with open(self.path, 'r', encoding='UTF-8') as f:
             data = f.readlines()

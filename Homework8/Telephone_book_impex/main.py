@@ -1,5 +1,5 @@
 import os
-from head import choice, view
+import head
 
 clear = lambda: os.system('cls')
 clear()

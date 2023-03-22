@@ -49,7 +49,7 @@ def choice():
 
 
 def view():
-    print(from_file('Telephone_book_impex/Telephonebook.txt'))
+    print(from_file('Telephonebook.txt'))
 
 def input_index(message: str):
     return int(input(message))
